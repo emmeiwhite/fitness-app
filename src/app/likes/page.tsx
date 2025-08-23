@@ -11,6 +11,7 @@ export default function Likes() {
     <div>
       <h2>12 likes</h2>
       <Button onClick={() => console.log('button clicked!')}>click me!</Button>
+      {String(console.log('Running on the server'))}
     </div>
   )
 }

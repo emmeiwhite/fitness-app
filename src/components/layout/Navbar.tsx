@@ -24,6 +24,7 @@ export default function Navbar() {
             </ul>
           </div>
           {/* 3. Join Btn */}
+
           <div className="hidden md:flex items-center space-x-4">
             <Button className="font-semibold">Join Now</Button>
           </div>

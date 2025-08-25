@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { Button } from '../ui/button'
 
 export default function Hero() {
   return (
@@ -9,17 +10,46 @@ export default function Hero() {
         <Image
           src="/fitness-hero.jpg"
           alt="Fitness freaks doing workout"
-          width={1200}
-          height={680}
-          //   fill
+          //   width={1200}
+          //   height={680}
+          fill
           className="object-cover object-center w-full"
         />
 
         {/* 2. Overlay */}
 
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
 
-        {/* 3. Hero Text */}
+      {/* 3. Hero Text */}
+      <div className="relative z-10 text-white text-center max-w-4xl">
+        <div>
+          <h1 className="text-5xl md:text-7xl font-black font-heading mb-6 leading-tighter">
+            Transform Your Body , <span className="text-primary">Transfrom Your Life</span>
+          </h1>
+
+          <p className="text-xl md:text-2xl mb-8 font-light leading-relaxed max-w-3xl mx-auto">
+            {' '}
+            Join our fitness programs and achieve your goals with expert trainers and personalised
+            plans.
+          </p>
+
+          {/* Buttons from ShadCN */}
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-lg font-semibold transition-transform duration-300 hover:scale-105 px-8">
+              Start Free Trail
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-transparent  text-lg font-semibold transition-transform duration-300 hover:scale-105 px-8">
+              View Plans
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   )

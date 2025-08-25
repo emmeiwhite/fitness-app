@@ -9,21 +9,24 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* 1. logo */}
           <span className="font-black text-2xl font-heading text-primary">FitPro</span>
-
           {/* 2. Desktop Navigation */}
           <div className="hidden md:block">
             <ul className="flex  justify-between items-center h-16 gap-7">
               {menuItems.map(item => (
                 <li key={item.name}>
-                  <Link href={item.href}>{item.name}</Link>
+                  <Link
+                    href={item.href}
+                    className="text-foreground hover:text-primary transition-colors duration-300 px-3 py-2 text-sm font-medium ">
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
-
           {/* 3. Join Btn */}
-
-          <Button>Join Now</Button>
+          <div className="hidden md:flex items-center space-x-4">
+            <Button className="font-semibold">Join Now</Button>
+          </div>
         </div>
       </div>
     </nav>

@@ -15,6 +15,10 @@ export default function Hero() {
           className="object-cover object-center w-full"
         />
 
+        {/* 2. Overlay */}
+
+        <div className="absolute inset-0 bg-black/50"></div>
+
         {/* 3. Hero Text */}
       </div>
     </section>

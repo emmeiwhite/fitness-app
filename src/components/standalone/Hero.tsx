@@ -51,6 +51,14 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Scroll Indicator */}
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 h-10 animate-bounce">
+        <div className="h-10 w-6 rounded-full border-2 flex justify-center pt-2">
+          <div className="h-3 w-1 rounded-full rounded-2 bg-primary-foreground animate-pulse"></div>
+        </div>
+      </div>
     </section>
   )
 }

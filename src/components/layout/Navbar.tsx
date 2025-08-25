@@ -1,4 +1,6 @@
+import { menuItems } from '@/lib/constants'
 import { Button } from '../ui/button'
+import Link from 'next/link'
 
 export default function Navbar() {
   return (
@@ -8,14 +10,16 @@ export default function Navbar() {
           {/* 1. logo */}
           <span className="font-black text-2xl font-heading text-primary">FitPro</span>
 
-          {/* 2. Menus */}
-          <ul className="flex justify-between items-center h-16 gap-7">
-            <li>Home</li>
-            <li>Programs</li>
-            <li>About</li>
-            <li>Pricing</li>
-            <li>Contact</li>
-          </ul>
+          {/* 2. Desktop Navigation */}
+          <div className="hidden md:block">
+            <ul className="flex  justify-between items-center h-16 gap-7">
+              {menuItems.map(item => (
+                <li key={item.name}>
+                  <Link href={item.href}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* 3. Join Btn */}
 

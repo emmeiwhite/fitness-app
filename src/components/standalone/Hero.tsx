@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { Button } from '../ui/button'
 
+import * as motion from 'motion/react-client'
+
 export default function Hero() {
   return (
     <section className="pt-16 relative h-screen flex justify-center items-center overflow-hidden">
@@ -24,9 +26,12 @@ export default function Hero() {
       {/* 3. Hero Text */}
       <div className="relative z-10 text-white text-center max-w-4xl">
         <div>
-          <h1 className="text-5xl md:text-7xl font-black font-heading mb-6 leading-tighter">
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-black font-heading mb-6 leading-tighter">
             Transform Your Body , <span className="text-primary">Transfrom Your Life</span>
-          </h1>
+          </motion.h1>
 
           <p className="text-xl md:text-2xl mb-8 font-light leading-relaxed max-w-3xl mx-auto">
             {' '}

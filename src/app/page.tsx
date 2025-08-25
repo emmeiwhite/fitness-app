@@ -1,9 +1,10 @@
-import { Button } from '@/components/ui/button'
+import Hero from '@/components/standalone/Hero'
 
 export default function Home() {
   return (
     <div>
-      <h1>Our App Lives here!</h1>
+      {/* 1. Hero Component */}
+      <Hero />
     </div>
   )
 }

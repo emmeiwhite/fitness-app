@@ -38,7 +38,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.7 }}
-            className="text-xl md:text-2xl mb-8 font-light leading-relaxed max-w-3xl mx-auto">
+            className="text-xl md:text-2xl mb-8 font-light leading-relaxed max-w-3xl mx-auto px-4">
             {' '}
             Join our fitness programs and achieve your goals with expert trainers and personalised
             plans.

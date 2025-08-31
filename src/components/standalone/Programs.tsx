@@ -57,9 +57,14 @@ export default function Programs() {
                         transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.2 }}>
                         {program.title}
                       </motion.h3>
-                      <p className="text-muted-foreground font-normal mb-4 transition-colors leading-relaxed">
+                      <motion.p
+                        className="text-muted-foreground font-normal mb-4 transition-colors leading-relaxed"
+                        initial={{ opacity: 0, y: 6 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.3 }}>
                         {program.description}
-                      </p>
+                      </motion.p>
                     </CardContent>
                   </Card>
                 </motion.div>

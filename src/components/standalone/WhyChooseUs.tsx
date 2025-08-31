@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
               return (
                 <motion.div
                   key={feature.title}
-                  className="group cursor-pointer group"
+                  className="group cursor-pointer group text-center"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -42,12 +42,30 @@ export default function WhyChooseUs() {
                   whileHover={{ scale: 1.03 }}>
                   {/* Icon */}
 
-                  <motion.div className="h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto group-hover:bg-primary transition-colors duration-300">
-                    <feature.icon className="w-8 h-8 group-hover:text-primary-foreground" />
+                  <motion.div
+                    className="h-16 w-16 rounded-full bg-primary/20 inline-flex items-center justify-center group-hover:bg-primary transition-colors duration-300 mb-6"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.5,
+                      ease: 'easeOut',
+                      delay: 0.18 * index
+                    }}>
+                    <feature.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
                   </motion.div>
 
                   {/* Title */}
-                  <div></div>
+                  <motion.h3
+                    className="text-xl font-bold font-heading mb-4 text-foreground"
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.14 * index }}>
+                    {feature.title}
+                  </motion.h3>
+
+                  <motion.p className="">{feature.description}</motion.p>
                 </motion.div>
               )
             })}

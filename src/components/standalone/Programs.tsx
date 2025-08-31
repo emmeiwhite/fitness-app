@@ -51,7 +51,7 @@ export default function Programs() {
                     <CardContent>
                       <motion.h3
                         className="text-xl font-bold font-heading mb-3 text-foreground group-hover:text-primary transition-colors"
-                        initial={{ opacity: 0, y: 0 }}
+                        initial={{ opacity: 0, y: 8 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.2 }}>

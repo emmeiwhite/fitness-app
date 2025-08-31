@@ -65,7 +65,14 @@ export default function WhyChooseUs() {
                     {feature.title}
                   </motion.h3>
 
-                  <motion.p className="">{feature.description}</motion.p>
+                  <motion.p
+                    className="text-muted-foreground leading-relaxed"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.14 * index }}>
+                    {feature.description}
+                  </motion.p>
                 </motion.div>
               )
             })}

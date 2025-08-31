@@ -2,6 +2,7 @@ import { programs } from '@/lib/constants'
 import * as motion from 'motion/react-client'
 import { Card, CardContent } from '../ui/card'
 import Image from 'next/image'
+import { Button } from '../ui/button'
 
 export default function Programs() {
   return (
@@ -48,7 +49,7 @@ export default function Programs() {
                       />
                     </div>
 
-                    <CardContent>
+                    <CardContent className="pb-6">
                       <motion.h3
                         className="text-xl font-bold font-heading mb-3 text-foreground group-hover:text-primary transition-colors"
                         initial={{ opacity: 0, y: 8 }}
@@ -65,6 +66,14 @@ export default function Programs() {
                         transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.3 }}>
                         {program.description}
                       </motion.p>
+
+                      <div>
+                        <Button
+                          variant="outline"
+                          className="w-full transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                          Learn
+                        </Button>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>

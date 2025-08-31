@@ -41,7 +41,7 @@ export default function Programs() {
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.2 * index }}
+                  transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 * index }}
                   whileHover={{ scale: 1.02 }}>
                   {/* Card Element from ShadCN */}
                   <Card className="p-0 transition-shadow duration-300 hover:shadow-2xl">

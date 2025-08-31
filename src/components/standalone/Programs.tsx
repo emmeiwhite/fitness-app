@@ -29,7 +29,7 @@ export default function Programs() {
           </motion.p>
         </div>
 
-        {/* 2. Program Cards */}
+        {/* 2. Features Cards */}
 
         <div className="">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

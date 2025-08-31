@@ -1,8 +1,5 @@
-import { programs } from '@/lib/constants'
+import { features } from '@/lib/constants'
 import * as motion from 'motion/react-client'
-import { Card, CardContent } from '../ui/card'
-import Image from 'next/image'
-import { Button } from '../ui/button'
 
 export default function WhyChooseUs() {
   return (
@@ -33,54 +30,24 @@ export default function WhyChooseUs() {
 
         <div className="">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {programs.map((program, index) => {
+            {features.map((feature, index) => {
               return (
                 <motion.div
-                  key={program.title}
-                  className="group cursor-pointer"
+                  key={feature.title}
+                  className="group cursor-pointer group"
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 * index }}
-                  whileHover={{ scale: 1.02 }}>
-                  {/* Card Element from ShadCN */}
-                  <Card className="p-0 transition-shadow duration-300 hover:shadow-2xl">
-                    <div className="relative overflow-hidden rounded-t-lg w-full h-60 md:h-56 lg:h-40">
-                      <Image
-                        src={program.image}
-                        fill
-                        className="object-cover transition-transform group-hover:scale-110"
-                        alt={program.description}
-                      />
-                    </div>
+                  transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.12 * index }}
+                  whileHover={{ scale: 1.03 }}>
+                  {/* Icon */}
 
-                    <CardContent className="pb-6">
-                      <motion.h3
-                        className="text-xl font-bold font-heading mb-3 text-foreground group-hover:text-primary transition-colors"
-                        initial={{ opacity: 0, y: 8 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.2 }}>
-                        {program.title}
-                      </motion.h3>
-                      <motion.p
-                        className="text-muted-foreground font-normal mb-4 transition-colors leading-relaxed"
-                        initial={{ opacity: 0, y: 6 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, ease: 'easeOut', delay: index * 0.3 }}>
-                        {program.description}
-                      </motion.p>
+                  <motion.div className="h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto group-hover:bg-primary transition-colors duration-300">
+                    <feature.icon className="w-8 h-8 group-hover:text-primary-foreground" />
+                  </motion.div>
 
-                      <div>
-                        <Button
-                          variant="outline"
-                          className="w-full transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-                          Learn
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  {/* Title */}
+                  <div></div>
                 </motion.div>
               )
             })}

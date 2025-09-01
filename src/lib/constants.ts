@@ -75,7 +75,7 @@ export const features = [
 export const testimonials = [
   {
     name: 'Sarah M.',
-    story: 'I lost 20lbs in 3 months with this program !',
+    story: 'I lost 20lbs in 3 months with this program!',
     details:
       'The personalised training and nutrition plan made all the difference. I feel stronger and more confident than ever.',
     image: '/sarah.jpg',

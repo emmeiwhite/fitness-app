@@ -14,7 +14,7 @@ export default function SuccessStories() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="text-4xl md:text-5xl font-black font-heading mb-4 text-foreground">
-            Why Choose <span className="text-primary">FitPro</span> Fitness?
+            Success Stories
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -22,8 +22,7 @@ export default function SuccessStories() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
             className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We provide everything you need to succeed on your fitness journey with proved methods
-            and expert support.
+            Real transformations from real people who chose to change their lives with our programs.
           </motion.p>
         </div>
 

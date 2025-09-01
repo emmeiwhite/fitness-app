@@ -35,7 +35,7 @@ export default function SuccessStories() {
               <motion.div
                 key={testimonail.name}
                 className="group">
-                <Card className="hover:scale-105 hover:shadow-2xl duration-600 transition-shadow">
+                <Card className="hover:shadow-2xl transition-shadow">
                   <CardContent className="p-8 text-center">
                     <motion.div className="h-30 w-24 mx-auto relative mb-6">
                       <Image
@@ -49,6 +49,14 @@ export default function SuccessStories() {
                     <motion.blockquote className="text-lg font-semibold font-heading text-foreground mb-4">
                       &quot;{testimonail.story}&quot;
                     </motion.blockquote>
+
+                    <motion.p className="text-muted-foreground leading-relaxed mb-4">
+                      {testimonail.details}
+                    </motion.p>
+
+                    <motion.cite className="text-primary font-bold italic">
+                      - {testimonail.name}
+                    </motion.cite>
                   </CardContent>
                 </Card>
               </motion.div>

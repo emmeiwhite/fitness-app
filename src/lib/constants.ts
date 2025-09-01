@@ -84,14 +84,16 @@ export const testimonials = [
   {
     name: 'John D.',
     story: 'The trainers push me beyond my limits in a healthy way',
-    details: 'Increase your flexibility, balance & mindfulness through guided yoga sessions',
+    details:
+      "Professional motivating and results-driven. I've gained weight and improved my overall fitness significantly.",
     image: '/john.jpg',
     rating: 5
   },
   {
     name: 'Emily R.',
     story: 'Flexible scheduling made it possible to stay consistent',
-    details: 'Boost your cardiovascular health with high-energy cardio training sessions',
+    details:
+      'As a busy mon, the online sessions and flexible timing helped me maintain my fitness routine without stress.',
     image: '/emily.jpg',
     rating: 5
   }

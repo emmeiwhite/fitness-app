@@ -1,5 +1,6 @@
 import Hero from '@/components/standalone/Hero'
 import Programs from '@/components/standalone/Programs'
+import SuccessStories from '@/components/standalone/SuccessStories'
 import WhyChooseUs from '@/components/standalone/WhyChooseUs'
 
 export default function Home() {
@@ -14,6 +15,10 @@ export default function Home() {
       {/* 3. WhyChooseUs Component */}
 
       <WhyChooseUs />
+
+      {/* 4. SuccessStories.tsx */}
+
+      <SuccessStories />
     </div>
   )
 }

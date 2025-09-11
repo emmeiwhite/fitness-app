@@ -54,7 +54,16 @@ export default function SuccessStories() {
                       {testimonail.details}
                     </motion.p>
 
-                    <motion.cite className="text-primary font-bold italic">
+                    <motion.cite
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.4,
+                        ease: 'easeOut',
+                        delay: index * 0.2
+                      }}
+                      className="text-primary font-bold italic">
                       - {testimonail.name}
                     </motion.cite>
                   </CardContent>

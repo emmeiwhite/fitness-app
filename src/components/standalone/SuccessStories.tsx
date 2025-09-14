@@ -44,7 +44,8 @@ export default function SuccessStories() {
                   duration: 0.5,
                   delay: index * 0.2,
                   ease: 'easeOut'
-                }}>
+                }}
+                whileHover={{ scale: 1.03, transition: { duration: 0.3, delay: 0 } }}>
                 <Card className="hover:shadow-2xl transition-shadow">
                   <CardContent className="p-8 text-center">
                     <motion.div

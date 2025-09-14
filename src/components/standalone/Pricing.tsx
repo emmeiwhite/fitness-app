@@ -2,6 +2,7 @@ import { plans } from '@/lib/constants'
 import * as motion from 'motion/react-client'
 import { Card, CardContent, CardHeader } from '../ui/card'
 import { Button } from '../ui/button'
+import { Badge } from '../ui/badge'
 
 export default function Pricing() {
   return (
@@ -84,9 +85,9 @@ export default function Pricing() {
 
                     {/* For Popular Div */}
                     {plan.popular ? (
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2  -translate-y-1/2 px-6 py-1 rounded-md   bg-red-600 text-white">
+                      <Badge className="absolute top-0 left-1/2 -translate-x-1/2  -translate-y-1/2 px-6 py-1 rounded-md bg-primary text-primary-foreground">
                         Most Popular
-                      </div>
+                      </Badge>
                     ) : (
                       ''
                     )}

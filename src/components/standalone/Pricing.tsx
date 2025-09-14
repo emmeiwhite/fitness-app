@@ -27,7 +27,7 @@ export default function Pricing() {
           </motion.p>
         </div>
 
-        {/* 2. Testimonail Cards */}
+        {/* 2. Plan Cards */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {plans.map((plan, index) => {
@@ -45,7 +45,14 @@ export default function Pricing() {
                 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.3, delay: 0 } }}>
                 <Card className="hover:shadow-2xl transition-shadow">
-                  <CardContent className="p-8 text-center"></CardContent>
+                  <CardContent className="p-8 text-center">
+                    <h3 className="font-bold mb-4">{plan.plan}</h3>
+                    <p className="mb-4">{plan.desc}</p>
+
+                    <div className="text-shadow-transparent flex justify-center items-end">
+                      <p className="text-5xl font-extrabold">${plan.price}</p>/month
+                    </div>
+                  </CardContent>
                 </Card>
               </motion.div>
             )

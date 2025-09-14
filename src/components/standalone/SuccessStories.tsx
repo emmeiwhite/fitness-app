@@ -2,8 +2,10 @@ import { testimonials } from '@/lib/constants'
 import * as motion from 'motion/react-client'
 import Image from 'next/image'
 import { Card, CardContent } from '../ui/card'
+import { Star } from 'lucide-react'
 
 export default function SuccessStories() {
+  const MAX_COUNT = 5
   return (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +39,16 @@ export default function SuccessStories() {
                 className="group">
                 <Card className="hover:shadow-2xl transition-shadow">
                   <CardContent className="p-8 text-center">
-                    <motion.div className="h-30 w-24 mx-auto relative mb-6">
+                    <motion.div
+                      className="h-30 w-24 mx-auto relative mb-6"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.5,
+                        ease: 'easeOut',
+                        delay: index * 0.2
+                      }}>
                       <Image
                         alt={testimonail.details}
                         src={testimonail.image}
@@ -46,11 +57,36 @@ export default function SuccessStories() {
                       />
                     </motion.div>
 
-                    <motion.blockquote className="text-lg font-semibold font-heading text-foreground mb-4">
+                    <motion.div className="flex gap-1 justify-center mb-4">
+                      {/* Add Stars */}
+                      {Array.from({ length: MAX_COUNT }).map((_, i) => {
+                        return <Star key={i} />
+                      })}
+                    </motion.div>
+
+                    <motion.blockquote
+                      initial={{ opacity: 0, y: 6 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.4,
+                        ease: 'easeOut',
+                        delay: index * 0.2
+                      }}
+                      className="text-lg font-semibold font-heading text-foreground mb-4">
                       &quot;{testimonail.story}&quot;
                     </motion.blockquote>
 
-                    <motion.p className="text-muted-foreground leading-relaxed mb-4">
+                    <motion.p
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.4,
+                        ease: 'easeOut',
+                        delay: index * 0.2
+                      }}
+                      className="text-muted-foreground leading-relaxed mb-4">
                       {testimonail.details}
                     </motion.p>
 

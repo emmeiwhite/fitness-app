@@ -98,3 +98,52 @@ export const testimonials = [
     rating: 5
   }
 ]
+
+// From Design to Schema
+export const plans = [
+  {
+    plan: 'Basic',
+    desc: 'Perfect for getting started with fitness',
+    price: 29,
+    period: 'month',
+    features: [
+      'Gym Access',
+      'Basic Equipment Usage',
+      'Locker Room Access',
+      'Mobile App Access',
+      'Progress Tracking'
+    ],
+    popular: false
+  },
+  {
+    plan: 'Pro',
+    desc: 'Most popular choice for serious fitness enthusiasts',
+    price: 59,
+    period: 'month',
+    features: [
+      'Everything in Basic',
+      '4 Personal training sessions',
+      'Group classes',
+      'Nutrition Consultation',
+      'Priority Support',
+      'Custom Workout plans'
+    ],
+    popular: true
+  },
+  {
+    plan: 'Elite',
+    desc: 'Complete fitness transformation package',
+    price: 99,
+    period: 'month',
+    features: [
+      'Everything in Pro',
+      'Unlimited training sessions',
+      'Personal nutrition coach',
+      'Online classes access',
+      '24/7 gym access',
+      'Recovery and wellness sessions',
+      'VIP member benefits'
+    ],
+    popular: false
+  }
+]

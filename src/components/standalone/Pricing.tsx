@@ -3,6 +3,7 @@ import * as motion from 'motion/react-client'
 import { Card, CardContent, CardHeader } from '../ui/card'
 import { Button } from '../ui/button'
 import { Badge } from '../ui/badge'
+import { Check } from 'lucide-react'
 
 export default function Pricing() {
   return (
@@ -36,49 +37,52 @@ export default function Pricing() {
             return (
               <motion.div
                 key={plan.plan}
-                className={`group  `}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                className={`group`}
+                initial={{ opacity: 0, y: 24, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: 0.5,
-                  delay: index * 0.2,
+                  duration: 0.6,
+                  delay: index * 0.1,
                   ease: 'easeOut'
-                }}
-                whileHover={{ scale: 1.03, transition: { duration: 0.3, delay: 0 } }}>
+                }}>
                 <Card
-                  className={`hover:shadow-2xl transition-shadow  relative ${
-                    plan.popular ? 'border-2 border-red-600 rounded-lg' : ''
+                  className={`hover:shadow-2xl transition-shadow  relative py-8 ${
+                    plan.popular ? 'border-2 border-primary ring-1 ring-primary/20' : ''
                   }`}>
-                  <CardHeader>
+                  <CardHeader className="text-center">
                     {' '}
-                    <h3 className="font-bold mb-2 mx-auto text-2xl font-heading text-foreground">
+                    <h3 className="font-bold mb-2  text-2xl font-heading text-foreground">
                       {plan.plan}
                     </h3>
                     <p className="mb-4 text-muted-foreground">{plan.desc}</p>
-                    <div className="text-shadow-transparent flex justify-center items-end mb-5">
-                      <span className="text-5xl font-extrabold">${plan.price}</span>/
-                      <span className="text-muted-foreground">${plan.period}</span>
+                    <div className="text-shadow-transparent">
+                      <span className="text-5xl font-heading font-black text-foreground">
+                        ${plan.price}
+                      </span>
+                      <span className="text-muted-foreground ml-1">/${plan.period}</span>
                     </div>
                   </CardHeader>
 
-                  <CardContent className="p-8 text-center">
-                    <ul>
+                  <CardContent className="text-center">
+                    <ul className="space-y-4 mb-8">
                       {plan.features.map((feature, index) => {
                         return (
                           <motion.li
                             key={index}
-                            className="flex gap-5 mb-3 capitalize">
-                            <span>✅</span>
-                            <p>{feature}</p>
+                            className="flex items-center  capitalize">
+                            <Check className="text-green-500 w-5 h-5 mr-3" />
+                            <p className="text-muted-foreground">{feature}</p>
                           </motion.li>
                         )
                       })}
                     </ul>
 
                     <Button
-                      className={`bg-black text-white rounded-md w-full py-2 block mt-8 capitalize ${
-                        plan.popular ? 'bg-red-600' : ''
+                      className={` text-lg text-muted-foreground rounded-md w-full py-2 font-semibold transition-colors duration-300  capitalize ${
+                        plan.popular
+                          ? 'bg-primary hover:bg-primary/90 text-secondary'
+                          : 'bg-foreground hover:bg-foreground text-secondary'
                       }`}>
                       join now{' '}
                     </Button>
@@ -98,8 +102,19 @@ export default function Pricing() {
           })}
         </div>
 
-        <motion.div>
-          <p>All plans include 7-day free trial. No commitment required. </p>
+        <motion.div
+          className="mt-12 text-center"
+          initial={{ opacity: 0, y: 24, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.6,
+            delay: 0.1,
+            ease: 'easeOut'
+          }}>
+          <p className="text-muted-foreground">
+            All plans include 7-day free trial. No commitment required.{' '}
+          </p>
         </motion.div>
       </div>
     </section>

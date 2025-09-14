@@ -36,7 +36,15 @@ export default function SuccessStories() {
             return (
               <motion.div
                 key={testimonail.name}
-                className="group">
+                className="group"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.2,
+                  ease: 'easeOut'
+                }}>
                 <Card className="hover:shadow-2xl transition-shadow">
                   <CardContent className="p-8 text-center">
                     <motion.div
@@ -57,10 +65,28 @@ export default function SuccessStories() {
                       />
                     </motion.div>
 
-                    <motion.div className="flex gap-1 justify-center mb-4">
+                    <motion.div
+                      className="flex gap-1 justify-center mb-4"
+                      initial={{ opacity: 0, y: 6 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.5,
+                        ease: 'easeOut',
+                        delay: index * 0.2
+                      }}>
                       {/* Add Stars */}
                       {Array.from({ length: MAX_COUNT }).map((_, i) => {
-                        return <Star key={i} />
+                        const filled = i < testimonail.rating
+                        return (
+                          <Star
+                            key={i}
+                            className={
+                              filled ? 'h-5 w-5 text-yellow-300' : 'h-5 w-5 text-neutral-300'
+                            }
+                            fill={filled ? 'currentColor' : 'none'}
+                          />
+                        )
                       })}
                     </motion.div>
 

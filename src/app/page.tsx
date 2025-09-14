@@ -1,4 +1,5 @@
 import Hero from '@/components/standalone/Hero'
+import Pricing from '@/components/standalone/Pricing'
 import Programs from '@/components/standalone/Programs'
 import SuccessStories from '@/components/standalone/SuccessStories'
 import WhyChooseUs from '@/components/standalone/WhyChooseUs'
@@ -16,9 +17,12 @@ export default function Home() {
 
       <WhyChooseUs />
 
-      {/* 4. SuccessStories.tsx */}
+      {/* 4. SuccessStories */}
 
       <SuccessStories />
+
+      {/* 5. Pricing Component */}
+      <Pricing />
     </div>
   )
 }

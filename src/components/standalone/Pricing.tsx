@@ -1,11 +1,8 @@
-import { testimonials } from '@/lib/constants'
+import { plans } from '@/lib/constants'
 import * as motion from 'motion/react-client'
-import Image from 'next/image'
 import { Card, CardContent } from '../ui/card'
-import { Star } from 'lucide-react'
 
-export default function SuccessStories() {
-  const MAX_COUNT = 5
+export default function Pricing() {
   return (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,8 +13,8 @@ export default function SuccessStories() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="text-4xl md:text-5xl font-black font-heading mb-4 text-foreground">
-            Success Stories
+            className="text-4xl md:text-5xl font-black font-heading mb-4 text-foreground capitalize">
+            Affordable Plans for everyone
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -25,17 +22,18 @@ export default function SuccessStories() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
             className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real transformations from real people who chose to change their lives with our programs.
+            Choose the perfect plan that fits your budget and fitness goals. All plans include our
+            core benefits
           </motion.p>
         </div>
 
         {/* 2. Testimonail Cards */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonail, index) => {
+          {plans.map((plan, index) => {
             return (
               <motion.div
-                key={testimonail.name}
+                key={plan.plan}
                 className="group"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -47,89 +45,7 @@ export default function SuccessStories() {
                 }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.3, delay: 0 } }}>
                 <Card className="hover:shadow-2xl transition-shadow">
-                  <CardContent className="p-8 text-center">
-                    <motion.div
-                      className="h-30 w-24 mx-auto relative mb-6"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.5,
-                        ease: 'easeOut',
-                        delay: index * 0.2
-                      }}>
-                      <Image
-                        alt={testimonail.details}
-                        src={testimonail.image}
-                        fill
-                        className="object-cover rounded-full border-4 border-primary/20 group-hover:border-primary transition-colors duration-300"
-                      />
-                    </motion.div>
-
-                    <motion.div
-                      className="flex gap-1 justify-center mb-4"
-                      initial={{ opacity: 0, y: 6 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.5,
-                        ease: 'easeOut',
-                        delay: index * 0.2
-                      }}>
-                      {/* Add Stars */}
-                      {Array.from({ length: MAX_COUNT }).map((_, i) => {
-                        const filled = i < testimonail.rating
-                        return (
-                          <Star
-                            key={i}
-                            className={
-                              filled ? 'h-5 w-5 text-yellow-300' : 'h-5 w-5 text-neutral-300'
-                            }
-                            fill={filled ? 'currentColor' : 'none'}
-                          />
-                        )
-                      })}
-                    </motion.div>
-
-                    <motion.blockquote
-                      initial={{ opacity: 0, y: 6 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.4,
-                        ease: 'easeOut',
-                        delay: index * 0.2
-                      }}
-                      className="text-lg font-semibold font-heading text-foreground mb-4">
-                      &quot;{testimonail.story}&quot;
-                    </motion.blockquote>
-
-                    <motion.p
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.4,
-                        ease: 'easeOut',
-                        delay: index * 0.2
-                      }}
-                      className="text-muted-foreground leading-relaxed mb-4">
-                      {testimonail.details}
-                    </motion.p>
-
-                    <motion.cite
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 0.4,
-                        ease: 'easeOut',
-                        delay: index * 0.2
-                      }}
-                      className="text-primary font-bold italic">
-                      - {testimonail.name}
-                    </motion.cite>
-                  </CardContent>
+                  <CardContent className="p-8 text-center"></CardContent>
                 </Card>
               </motion.div>
             )

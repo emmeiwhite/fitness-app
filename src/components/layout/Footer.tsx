@@ -34,7 +34,23 @@ export default function Footer() {
             </div>
           </div>
 
-          {/*  */}
+          {/* Quick Links */}
+          <div>
+            <p className="text-lg mb-4 font-heading font-bold">Quick Links</p>
+            <ul className="space-y-2">
+              {['Home', 'About', 'Programs', 'Pricing', 'Contact'].map(link => {
+                return (
+                  <li key={link}>
+                    <Link
+                      href="#"
+                      className="hover:text-primary transition-colors duration-300">
+                      {link}
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </footer>

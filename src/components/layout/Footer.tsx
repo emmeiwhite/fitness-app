@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 ">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
-          <div className="col-span-2">
+          <div className="md:col-span-2">
             <p className="text-primary text-3xl font-black font-heading mb-4">FitPro Fitness</p>
 
             <p className="mb-6 leading-relaxed max-w-md">
@@ -51,6 +51,43 @@ export default function Footer() {
               })}
             </ul>
           </div>
+
+          {/* Contact Info */}
+
+          <div>
+            <p className="text-lg mb-4 font-heading font-bold">Contact Info</p>
+
+            <div className="space-y-3">
+              <div>
+                <p>
+                  <strong>Phone:</strong>
+                </p>
+                (5555) 123-4567
+              </div>
+
+              <div>
+                <p>
+                  <strong>Email:</strong>
+                </p>
+                fitpro@demo.fit
+              </div>
+
+              <div>
+                <p>
+                  <strong>Location:</strong>
+                </p>
+                <p>123, Koramangala, 5th block</p>
+                <p>UB City, 2323, 560025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t  border-secondary/40 mt-20 pt-10 text-center text-neutral-400 ">
+          <p>
+            &copy; 2025 FitPro Fitness. All rights reserved. Transform your body, transform your
+            life.
+          </p>
         </div>
       </div>
     </footer>
